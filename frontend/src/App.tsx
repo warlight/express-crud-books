@@ -21,11 +21,19 @@ function App() {
         setSelectedId(selectedId);
     }
 
+    async function deleteBook() {
+        if (selectedId === null) return;
+
+        await apiCalls.deleteBook(selectedId);
+        setSelectedId(null);
+        await getBooks();
+    }
+
     useEffect(() => {
         const fetchBooks = async () => {
             await getBooks();
         }
-        fetchBooks()
+        fetchBooks();
     }, [])
 
     useEffect(() => {
@@ -47,21 +55,22 @@ function App() {
                                 <>
                                     <Button
                                         variant="contained"
-                                        onClick={() => {
-                                            setShowForm(!showForm);
-                                            updateBookForm()
+                                        onClick={async () => {
+                                            setShowForm(!showForm); await updateBookForm()
                                         }}
                                         sx={{'marginLeft': '8px'}}
                                     >
                                         Update book
                                     </Button>
+
                                     <Button
                                         variant="contained"
-                                        onClick={() => setShowForm(!showForm)}
                                         sx={{'marginLeft': '8px'}}
+                                        onClick={deleteBook}
                                     >
                                         Delete book
-                                    </Button></>
+                                    </Button>
+                                </>
                             ) : (<></>)
                         }
                     </>

@@ -29,5 +29,11 @@ export default {
             },
             body: JSON.stringify(book),
         })
+    },
+
+    async deleteBook(id: number): Promise<void> {
+        await fetch(`http://localhost:3000/books/${id}`, {
+            method: "DELETE",
+        });
     }
 }
