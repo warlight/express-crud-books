@@ -1,5 +1,5 @@
 //booksRepository
-import {type Book } from "./types.js"
+import {type Book } from "../types.js"
 
 let books: Book[] = []
 let nextId: number = 1
