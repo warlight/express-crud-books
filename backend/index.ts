@@ -17,9 +17,6 @@ app.use(cors({
 
 app.use('/books', routes);
 await ConnectDB();
-// await mongoose.connect('mongodb://127.0.0.1:27017/crud_books');
-
-// BookSchema.find(1);
 
 app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`);
