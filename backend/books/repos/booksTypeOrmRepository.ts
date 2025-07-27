@@ -1,7 +1,7 @@
 import {Book} from "../types.js";
 import BookModel from "../models/typeOrmBookModel.js";
 
-export const getAll = async (): Promise<Book[]> => {
+export const getAll = async (): Promise<BookModel[]> => {
     return await BookModel.find();
 }
 

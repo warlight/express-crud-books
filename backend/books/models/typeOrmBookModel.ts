@@ -1,4 +1,5 @@
 // typeOrmBookModel
+import "reflect-metadata";
 import {Entity, PrimaryGeneratedColumn, Column, BaseEntity} from "typeorm";
 
 @Entity({name: "books"})
