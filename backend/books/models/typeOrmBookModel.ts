@@ -3,7 +3,7 @@ import "reflect-metadata";
 import {Entity, PrimaryGeneratedColumn, Column, BaseEntity} from "typeorm";
 
 @Entity({name: "books"})
-export default class Book extends BaseEntity {
+export class Book extends BaseEntity {
     @PrimaryGeneratedColumn("increment")
     id: string;
 
