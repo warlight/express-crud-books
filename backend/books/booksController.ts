@@ -9,7 +9,7 @@ const index = async (req: Request, res: Response): Promise<void> => {
 }
 
 const show = async (req: Request, res: Response): Promise<void> => {
-    const id: number = await parseInt(req.params.id);
+    const id: number = parseInt(req.params.id);
     try {
         res.json(await findBookById(id))
     } catch (error: any) {
